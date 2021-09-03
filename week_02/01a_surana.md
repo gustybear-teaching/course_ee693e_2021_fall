@@ -67,7 +67,7 @@ When applying the active defense with bait clicks, it can be seen in Table 3, th
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/ClicktokTable4.png" title="Table 4: Comparation of Clicktok" width="320" >}}
 Lastly, Clicktok gives an comparation between their implementation compared to other defenses, with Clicktok providing vastly lower false positive rates comparatively, and similar or better true positive rates.
 
-##Audience Questions
+### Audience Questions
 What are the causes of a synch error, factors, reasons?
 The causes of synch error may be slight differences in recorded time stamps with the data, or perhaps duplicated user clicks that may happen from errors in the user's app/browser. This might lead into false transmissions.
 
