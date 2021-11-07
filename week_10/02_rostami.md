@@ -38,6 +38,11 @@ In this paper, the authors had to examine whether ECG signals are capable of pro
 One advantage of H2H is that it protects from attackers by providing touch-to-access security. H2H provides protocols for different scenarios (i.g. when a patient ECG signal goes flat). A disadvantage of this proposal is the limitation of having touch-to-access between the programmer and the IMD. 
 
 ### Implementation
+H2H was implemented into an IMD prototype consisting of three boards which can be seen from Figure 6. The ARM board was chosen to be the Leopard Gecko EFM-32 microcontroller (EFM32LG-DK3650) with a 32-bit ARM Cortex-M3 processor. This board communicates with the ECG analog front end (TI ADS1298) and the wireless board (TI CC430F5137). It has convenient power debugging tools and can extract the ECG features and communicate with the Programmer using TLS all while having a good power consumption profile.
+
+TLS is used to establish the secure channel implementation between the Programmer and H2H. It is designed to provide an encrypted and authenticated channel between the two parties, usually comparing the Programmer certificate to PKI. However, the authors chose to forgo that for the ECG PV comparison which is more forgiving to the noise typical in ECG signals. RSA encryption for key exchange is chosen since it is the fastest exchange option for TLS in this application which has a small public exponent of 216 + 1. The RSA follows the NIST key length recommendation of modulus and message length set to 2048 bits and is also MISRA-C standard compliant. 
+
+A NIST-recommended pseudo-random number generator or PRNG is used to allow certain actions such as RSA ciphertext padding and key generation and commitment. The initial random seed is generated offline and stored in the IMD’s non-volatile memory. As for ECG parameter extraction, the prototype annotates the ECG R-peaks by using an open source algorithm called WQRS to apply a simple length transformation to the ECG waveform.
 
 
 ### Experimentation
@@ -48,6 +53,10 @@ One advantage of H2H is that it protects from attackers by providing touch-to-ac
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/multipleattempts.jpg" title="Success Rate with Multiple Rounds" width="300" >}} -->
 
 ### Discussion
+There are three broad technical approaches other papers have explored with comparison to H2H. The first is distance bounding which focuses on acoustic transmission of a random key. Halperin et al. tested authentication with a piezo device while Rasmussen et al. tested a similar ultrasound-based approach. However, it was found that this security model was too fragile and also comes with added energy cost and RF shielding requirements. 
+The next technical approach is called shielding which is the idea of blocking inappropriate access to an IMD. There are two comparisons made with a wearable device called IMDGuard  and the works of Gollakota et al. In the end, the external burdens of a wearable device plus an increase in system failures make it an inferior method. 
+Lastly, PV based authentication is mentioned in numerous works. However, none have done a rigorous security analysis like H2H and have been exposed to serious issues. 
+Overall, the H2H prototype implementation confirms the promise of security, practicality and low overhead of H2H for current and future generations of IMDs.
 
 
 ### Questions
