@@ -21,7 +21,8 @@ tags:
 
 ***
 ## Paper Summary
-Implantable medical devices are widespread and have been helping patients for decades. However, the recent works have shown that IMDs are vulnerable to attack. The biggest challenge arises from the difficulty of modifying an already implanted devices for security enhancements. The paper proposes to the use of a physical device called the shield, in which the security of the IMD is delegated to. The shield uses a novel radio design that can act as a jammer-cum-receiver. This design allows it to jam the IMD’s messages, preventing others from decoding them while being able to decode them itself. This design was evaluated using a software radio and was able to effectively provide confidentiality and protection from outside attacks.
+Implantable medical devices are widespread and have been helping patients for decades. However, the recent works have shown that IMDs are vulnerable to attack. The biggest challenge arises from the difficulty of modifying an already implanted devices for security enhancements. The paper proposes to the use of a physical device called the shield, in which the security of the IMD is delegated to. The shield uses a novel radio design that can act as a jammer-cum-receiver. This design allows it to jam the IMD’s messages, preventing others from decoding them while being able to decode them itself. This design was evaluated using a software radio and was able to effectively provide confidentiality and protection from outside attacks. The authors implemented a proof-of-concept prototype shield with GNU Radio and USRP2 hardware. The in vitro experiments is being conducted in 18 different locations. The authors evaluated their prototype of a shield against commercially available IMDs and the results shows that the shield effectively protects the confidentiality of the IMD’s messages and is capable of defending the IMD against commands from unauthorized users/parties.
+
 ***
 
 ## Presentation
@@ -35,12 +36,15 @@ Implantable medical devices are widespread and have been helping patients for de
 - Provide protection for existing IMD without any modifications	
 - Can coexist with other devices
 - First full-duplex radio without strict antenna positioning
+- Prototype is deloved and validated through experimental data. 
 
 
 ### Weaknesses
 - High turn-around time
 - Full-duplex radio is very difficult to implment
 - Shield has a transmission power limit, which is dependent on the position of the adversary
+- The two-antenna jammer-cum-receiver requires the receive antenna to be always connected to both a transmit and a receive chain
+- The paper doesn't mention about the implementation cost of the proposed system.  
 
 ### Detailed Comments
 The wireless connectivity of implantable medical devices (IMDs) leaves IMDs exploited to compromised confidentiality of transmitted data or unauthorized commands. An external device called a shield is worn on the body and near the IMD to jam the IMDs’ transmissions and other incoming transmissions. This helps prevent adversaries from decoding any information from the IMD and encoding unauthorized commands into the IMDs. Since the shield can be carried around as an external device to protect existing IMDs, this is useful since it eliminates the concept of surgically removing IMDs to perform cryptographic mechanisms. This work also presents this shield as the full-duplex radio without any strict antenna positioning. The jamming antenna and the receive antenna in the radio can be placed next to each other, and hence can be built as a small wearable device capable of providing security. In addition to the compatibility with existing IMDs, shields can also coexist with meteorological devices that are users in the medical implant communication services (MICS) band. The shield does detect all packets, but it does not jam any of the cross-traffic packets. This means that the only packets it jams is those that were addressed to the IMD. 
