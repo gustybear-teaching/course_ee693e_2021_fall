@@ -53,7 +53,7 @@ Although the shield can jam all packets addressed to the IMD, the software radio
 
 ### Implementation
 
-The authors implemented a proof-of-concept prototype shield with GNU Radio and USRP2 hardware. The prototype is developed using the USRP’s RFX400 daughterboards operating in the MICS band. They implement a two-antenna shield with two USRP2 radio boards connected via an external clock acting as a single node, since the USRP2 does not support multiple daughterboards on the same motherboard. The two antennas are placed right next to each other and the two-antenna jammer-cum-receiver requires the receive antenna to be always connected to both a transmit and a receive chain. They turn off the USRP RX/TX switch to enable the shield’s receive antenna to transmit and receive simultaneously. The test bed setup presented in Figute ----- under experimentation section, represents 18 advisory locations numbered in descending order of received signal strength. The authors followed a prior work to simulate implantation in a human.  Each IMD was implanted beneath 1 cm of bacon along with 4 cm of 85% lean ground beef packed underneath. They placed the shield next to the IMD on the bacon’s surface to simulate a necklace. Then the adversary’s location varied between 20 cm and 30 m as shown in the figure.
+The authors implemented a proof-of-concept prototype shield with GNU Radio and USRP2 hardware. The prototype is developed using the USRP’s RFX400 daughterboards operating in the MICS band. They implement a two-antenna shield with two USRP2 radio boards connected via an external clock acting as a single node, since the USRP2 does not support multiple daughterboards on the same motherboard. The two antennas are placed right next to each other and the two-antenna jammer-cum-receiver requires the receive antenna to be always connected to both a transmit and a receive chain. They turn off the USRP RX/TX switch to enable the shield’s receive antenna to transmit and receive simultaneously. The test bed setup presented in the last Figute under experimentation section, represents 18 advisory locations numbered in descending order of received signal strength. The authors followed a prior work to simulate implantation in a human.  Each IMD was implanted beneath 1 cm of bacon along with 4 cm of 85% lean ground beef packed underneath. They placed the shield next to the IMD on the bacon’s surface to simulate a necklace. Then the adversary’s location varied between 20 cm and 30 m as shown in the figure.
  
 The experiments use the following devices:
 • Medtronic Virtuoso DR implantable cardiac defibrillators (ICDs).
@@ -86,6 +86,9 @@ Off-the-shelf adversary equipment attempts to send unauthorized command to the I
 High powered adversary equipment attempts to control IMD from different locations. Each attempt was done twice, one with the shield and the other without.
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_10/images/Table1_Gollakota.png" title="Table 1: Coexistance of the shield with other devices" width="320" >}}
+Jamming behavior and turn-around time in the presence of simulated meteorological cross-traffic.
+
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/blob/main/week_10/images/Fig-6.JPG" title="Testbed setup showing shield, IMD, and adversary locations. We experiment with 18 adversary locations, numbered here in descending order of received signal strength at the shield." width="320" >}}
 Jamming behavior and turn-around time in the presence of simulated meteorological cross-traffic.
 
 
