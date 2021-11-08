@@ -49,6 +49,16 @@ Although the shield can jam all packets addressed to the IMD, the software radio
 
 ### Implementation
 
+The authors implemented a proof-of-concept prototype shield with GNU Radio and USRP2 hardware. The prototype is developed using the USRP’s RFX400 daughterboards operating in the MICS band. They implement a two-antenna shield with two USRP2 radio boards connected via an external clock acting as a single node, since the USRP2 does not support multiple daughterboards on the same motherboard. The two antennas are placed right next to each other and the two-antenna jammer-cum-receiver requires the receive antenna to be always connected to both a transmit and a receive chain. They turn off the USRP RX/TX switch to enable the shield’s receive antenna to transmit and receive simultaneously. The test bed setup presented in Figute ----- under experimentation section, represents 18 advisory locations numbered in descending order of received signal strength. The authors followed a prior work to simulate implantation in a human.  Each IMD was implanted beneath 1 cm of bacon along with 4 cm of 85% lean ground beef packed underneath. They placed the shield next to the IMD on the bacon’s surface to simulate a necklace. Then the adversary’s location varied between 20 cm and 30 m as shown in the figure.
+ 
+The experiments use the following devices:
+• Medtronic Virtuoso DR implantable cardiac defibrillators (ICDs).
+• A Medtronic Concerto cardiac resynchronization therapy device (CRT).
+• A Medtronic Vitatron Carelink 2090 Programmer.
+• USRP2 software radio boards.
+
+In in-vitro experiments, the ICD and CRT play the role of the protected IMD. The roles of the shield is played by the USRP devices, the adversary and legitimate users of the MICS band.
+
 ### Experimentation
 In order to evaluate the prototype shield against commerically avaiable IMDs, the authors show its effectiveness in protecting confidentiality of the IMD's message and defending against unauthorized parties. The authors also performed experiments to see how effectively the shield decodes IMD's transmission despite jamming, and what would happen if the shield is not present.
 
