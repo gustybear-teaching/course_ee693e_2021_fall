@@ -107,9 +107,9 @@ Active adversaries were further divided into two based on the equipment they use
 
 2.	There is always a cost-benefit analysis when it comes to security and convenience. What is the cost of this system?
 
-      In terms of pricing, it is not very clear on what parts were used for a full-duplex radio, especially since the design has to be a small wearable device. Hence, this product could be very expensive to create and implement. In the paper, the MICS band is partitioned into multiple channels of 300 KHz width, for a total bandwidth of 3 MHz. This means that the system doesn't require a high-speed analog-to-digital converter, which lowers the cost and power consumption.
+      The paper lacks to mention about the implementation cost of their proposed system. Moreover, in terms of pricing, it is not clearly mentioned in the paper that what parts were used for a full-duplex radio, especially since the design has to be a small wearable device. Hence, this product could be very expensive to develop and implement. In the paper, the MICS band is partitioned into multiple channels of 300 KHz width, for a total bandwidth of 3 MHz. This means that the system doesn't require a high-speed analog-to-digital converter, which lowers the cost and power consumption.
 
 3.	What are the limitations for this experiment?
 
-      The limitations of this system is the transmission power limit of the jammer. In order to prevent an attack at immensely far distances, the shield requires more power to transmit a jamming signal. In addition, the functionality of the shield is only applicable to digital and software security. If an adversary were to ever be in close, physical proximity to the patient's IMD, the attacker can trigger a reaction that even the shield is unable to prevent.
+      The limitations of this system/experiment is the transmission power limit of the jammer. In order to prevent an attack at immensely far distances, the shield requires more power to transmit a jamming signal. In addition, the functionality of the shield is only applicable to digital and software security. If an adversary were to ever be in close, physical proximity to the patient's IMD, the attacker can trigger a reaction that even the shield is unable to prevent.
       
