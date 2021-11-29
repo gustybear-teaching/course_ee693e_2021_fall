@@ -1,17 +1,17 @@
 ---
-title: "01: Clicktok: Click Fraud Detection using Traffic Analysis
-Shishir Nagaraja, Ryan Shah"
-date: 2021-08-30
+title: "01: Securing Electronic Medical Records Using Attribute-Based Encryption On Mobile Devices
+Joseph Akinyele, Matthew Pagano, Matthew Green, Christoph Lehmann, Zachary Peterson, Aviel Rubin"
+date: 2021-11-28
 type: book
 commentable: true
 
 # Provide the name of the presenter
-summary: "Presenter(s): Alvin Yang, Thomas Yang"
+summary: "Presenter(s): Saige Dacuycuy, Tasmia Tahmid, Jeanalyn Wadsack-Myers"
 
 # Provide other tags that describe the paper
 tags:
-- teaching
-- ee693e
+- attribute-based encryption
+- security
 
 ---
 
@@ -21,7 +21,7 @@ This paper delves into the creation and testing of a new protocol, Clicktok, in 
 ***
 
 ## Presentation
-{{< youtube C2LOWF_K-FM >}}
+{{< youtube rKlSd3DZfkY >}}
 
 ***
 
@@ -68,26 +68,10 @@ When applying the active defense with bait clicks, it can be seen in Table 3, th
 Lastly, Clicktok gives an comparation between their implementation compared to other defenses, with Clicktok providing vastly lower false positive rates comparatively, and similar or better true positive rates.
 
 ##Audience Questions
-What are the causes of a synch error, factors, reasons?
-The causes of synch error may be slight differences in recorded time stamps with the data, or perhaps duplicated user clicks that may happen from errors in the user's app/browser. This might lead into false transmissions.
+1. Is there a reason 128 bit size was used in the AES over other larger bit sizes?
 
-Clicktok outperforms its competitors when analyzing low rate attacks, what is the differences it has over them?
-The difference is that Clicktok is able to identify patterns where a malicious app may try to replay user clicks. So it would then be able to determine through a low rate attack if the clicks produced by the low rate is fraudulent.
+2. Do you think this proposal is still secure as of today?
 
-What are the limitations of using threshold based approaches?
-The limitations of threshold based approaches is that with how economical setting up click farms is now, adversaries can now attack with sending clicks under the threshold and still be able to profit.
+3. Along with the ciphertext, ABE requires the sender to provide information about the receiver's required attributes. Is this system capable of preventing that?
 
-The paper states that "the mimicry defense detects around 81% of fake clicks in stealthy (low rate) attacks... What about high rate attacks?"
-With high rate attacks, the mimicry defense is actually even better at around 99% true positive rate for a 12 week duration with Google's ad network.
 
-In the passive setup, the authors only demonstrated that their method works for the dataset they choose. Why can't the attacker produce click pattern that is statistically indistinguishable with real click? (i.e. an adversary attacker)
-The attacker could potentially produce a click pattern that is similar to a user, but the paper focuses on malicious apps that replay user's clicks, or that uses a random/fixed interval delay to send clicks. A malicious app might require more resources to send fraudulent clicks.
-
-Why active defense improves detection rates better than passive defense?
-An active defense improves detection rates, as the bait clicks allow the defense algorithm to detect whether malicious apps are replaying the bait clicks as the bait clicks are sent with known intervals, making detection of replayed clicks better.
-
-How would a machine learning algorithm specifically designed to mimic click patterns of humans, be able to break the algorithm?
-It would probably be able to break this algorithm as this method looks for patterns in clicking and then the variance of these clicks to determine true from false clicks. So a machine learning algorithm may be able to produce similar click patterns that defeat both detection methods. With that said, it may then result in future methods of using machine learning to then detect fake clicks.
-
-Do you think there are other factors, in addition to time patterns/properties, that can help to verify authentic click traffic to further increase the accuracy of the proposed technique(s)?
-There may be other factors such as location of the IP being considered where the time in the location where a click is received might give clues as to whether the click is genuine. Other factors may also include, device type, operating system, etc., as click farms might have similar configurations.
