@@ -46,9 +46,11 @@ A database audit log system that creates asymmetrically encrypted and searchable
 
 ### Questions
 (1) So to reduce overhead, the authors plan to implment the indexing algorithm in the future?
+
 There were two bottlenecks defined for optimization process. The first one was the computations of the pairing and the other one was the modular exponentiations for each keyword w. Indexing optimizes by creating an index of keywords at periodic intervals in the log, instead of storing IBE encryptions with each log entry. This increases performance because the pairing and modular exponentiation would only need to be done once per keyword and reusing a key would only require a lookup in the log. To reduce overhead, indexing can be paired with a pairing reuse or randomness reuse, which will increase the advantages of using indexing due to the keyword repetition employed by the other steps. 
 
 (2) Some literature mentions that, identity based crypotography causes identity recovation problem, does this paper cover this aspect?
 
 (3) Are there any tradeoffs with optimizing the asymmetric scheme?
+
 There is a tradeoff when trying to optimize the performance of the asymmetric scheme. When you gain performance in terms of computation time reduction, you will use extra space/memory you would not need originally. So, whenever you are optimizing you will have to consider this time/space tradeoff and the tipping point would depend on the case at hand. For example, when using indexing in the asymmetric scheme, the extra memory used for the buffer was worth the time gain because the buffer did not demand that much space and the time gain was noticeably different. 
