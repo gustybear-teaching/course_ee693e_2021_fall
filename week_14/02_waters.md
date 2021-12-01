@@ -23,12 +23,15 @@ tags:
 ***
 ## Review
 ### Strengths
-- 
+- Secured audit log encryption with search feature.
 
 ### Weaknesses
-
+- Must require audit agents to create search capabilities.
+- Introduces considerable overhead on the proposed ID-based schemes.
 
 ### Detailed Comments
+Most server software requires secured audit logs against attacks. A secure audit log is important in telehealth field due to the sensitive data hospitals contain. A secured audit log must be tamper resistant, verifiable, has data access control, and has search capabilities. This paper proposes an approach to build a secured audit log based on Identity-Based Encryption (IBE). In this approach, the master secret is held by trusted authority to issue keyword search capabilities. Audit log entries are encrypted with public keys corresponding to keywords. In this scheme, the adversary cannot tell which public keys was used for each ciphertexts.
+
 
 
 ### Implementation
