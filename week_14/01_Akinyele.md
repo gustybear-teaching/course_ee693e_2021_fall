@@ -40,7 +40,9 @@ By detecting the timing characteristics of click traffic feed received at ad net
 As for the potential weakness in Clicktok, a more advanced click randomization/generation scheme may make detecting fraudulent clicks from real organic clicks difficult. If an attacker is able to uncover how Clicktok determines fraudulent clicks, they may be able to generate a workaround towards Clicktok's defenses. Then addressing the IP aggregation and churn, as some networks may aggregate IPs, it makes identifying individual user's clicks all the more difficult which would result in a lower efficacy when identifying false clicks.
 
 ### Implementation
-The paper provides an explanation into how they implemented their algorithm of Clicktok, as well as how they collected the data they used to train their model. The way they collected their data was by setting up traffic monitors on backbone routers of a university campus network. They collected a total of 217,334,190 unique clicks, between June 2015 and November 2017. The data was collected after obtaining ethical approval, and all stored data is encrypted. As for how they implemented their algorithm, they took the click traffic of each user (click stream), and attempted to decompose the click streams of each user into basic patterns by using a non-negative matrix factorization algorithm. This decomposes the click traces into pattern matrices, and weight matrices as to how often each pattern occurs.
+
+
+The paper uses an app called "iHealthEMR" that interfaces with the provider's server and, optionally, with cloud-ase storage by Google Health. The primary functions of the app is to browse, update, and secure CCR.
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/ClicktokSystemArchitecture.png" title="System Architecture" width="320" >}}
 
