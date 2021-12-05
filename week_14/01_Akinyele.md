@@ -67,7 +67,7 @@ When applying the active defense with bait clicks, it can be seen in Table 3, th
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/ClicktokTable4.png" title="Table 4: Comparation of Clicktok" width="320" >}}
 Lastly, Clicktok gives an comparation between their implementation compared to other defenses, with Clicktok providing vastly lower false positive rates comparatively, and similar or better true positive rates.
 
-###Audience Questions
+### Audience Questions
 1. Is there a reason 128 bit size was used in the AES over other larger bit sizes?
 
 2. Do you think this proposal is still secure as of today?
