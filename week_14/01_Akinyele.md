@@ -28,8 +28,10 @@ The paper present a prototype system to protect EMRs when outside of the trusted
 
 ## Review
 ### Strengths
-- This paper offers a method of detecting fraudulent clicks that does not rely on a threshold based defense.
-- By taking advantage that click fraud often uses previous user traffic in order to fabricate fake clicks, Clicktok is able to identify click fraud even though the attacker may be imitating organic clicks.
+- This paper focuses to develop effective techniques for protecting the privacy of emergency medical records and targets to address 5 major issues or problem areas. 
+- The paper very well addresses various complexity of access policies to ensure information security. 
+- In this paper, the author describes  efforts to provide self protecting EMRs on mobile devices using recent developments in attribute-based encryption (ABE).
+- The paper scrutizes the importance of offline access thoroghly which eventually puts some light on understanding the importance of emergency access to medical records during massive catastropic failures or similar disaster situations.  
 
 ### Weaknesses
 - Although Clicktok seems promising in detecting fraudulent clicks at various rates of attack, it seem it may be possible for an adversary to create a method that is able to bypass Clicktok's detection system.
