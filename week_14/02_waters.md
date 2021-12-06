@@ -16,6 +16,7 @@ tags:
 ---
 ***
 ## Paper Summary
+Audit logs are an important part of any software system. This is also important in the telehealth applications. Security risks are one of the key issues for having audit logs. In the telehealth field, it is vital to have a secured logs for sensitive medical data. A key challenge in building a secured audit log is building a searchable feature. The proposal of this research is on building a secured and searchable audit logs. The design of this proposal is to have a master agent to issue search capabilities. This paper implemented the design using MySQL, Stanford Identity-Based Encryption library and the symmetric encryption was based on Cryptlib library.
 
 ***
 ## Presentation
