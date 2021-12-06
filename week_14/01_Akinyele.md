@@ -61,14 +61,15 @@ They also categorized and analyzed different click categories, where sponsored a
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_14/images/Akinyele_Table1.png" title="Figure 1: Implementation of Attribute-Based Encryption" width="250" >}}
 When applying the active defense with bait clicks, it can be seen in Table 3, that it improves detection rates. With both the increase in true positive rates, and decrease in false positive rates, show that an active defense may be important in identifying fake clicks.
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/ClicktokTable4.png" title="Table 4: Comparation of Clicktok" width="320" >}}
-Lastly, Clicktok gives an comparation between their implementation compared to other defenses, with Clicktok providing vastly lower false positive rates comparatively, and similar or better true positive rates.
-
 ### Audience Questions
 1. Is there a reason 128 bit size was used in the AES over other larger bit sizes?
 
+  We believe that there is no reason for why the authors used 128-bit keys for AES other than a simple implementation and for a proof-of-concept. A 128-bit size key is usually the less secured type of AES encryption. Having more bits, a 192-bit or a 256-bit AES encryption, would progressively give more rounds of encryption and improve the security of the one used in the paper. 
+
 2. Do you think this proposal is still secure as of today?
+
+  We believe that this proposal will not be secured when compared to today’s standards. It was discussed earlier that a 128-bit size AES encryption showed less encrypted security. It could be argued that the minimal action needed to break into a 128-bit size AES encryption is the same for a 256-bit size AES encryption. We believe that due to this paper being published in 2011 and the advancement of quantum computing, AES will soon become obsolete.
 
 3. Along with the ciphertext, ABE requires the sender to provide information about the receiver's required attributes. Is this system capable of preventing that?
 
-
+  We are not sure about the meaning of your question. To elaborate on the concept of the ABE approach used in this paper, the nodes in the CCR are encrypted using key- or ciphertext-policy ABE under an access policy. These policies are then initialized with the attributes of the user such as age, name of physician, etc
