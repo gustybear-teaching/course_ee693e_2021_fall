@@ -50,6 +50,7 @@ The establishment and maintenance of a secure audit record requires a significan
 There were two bottlenecks defined for optimization process. The first one was the computations of the pairing and the other one was the modular exponentiations for each keyword w. Indexing optimizes by creating an index of keywords at periodic intervals in the log, instead of storing IBE encryptions with each log entry. This increases performance because the pairing and modular exponentiation would only need to be done once per keyword and reusing a key would only require a lookup in the log. To reduce overhead, indexing can be paired with a pairing reuse or randomness reuse, which will increase the advantages of using indexing due to the keyword repetition employed by the other steps. 
 
 (2) Some literature mentions that, identity based crypotography causes identity recovation problem, does this paper cover this aspect?
+
 This study does not address the issue of identity revocation. They make a passing reference to one disadvantage of this technique is the performance penalty associated with Identity-Based Encryption.
 
 (3) Are there any tradeoffs with optimizing the asymmetric scheme?
