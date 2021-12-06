@@ -17,7 +17,8 @@ tags:
 
 ***
 ## Paper Summary
-This paper delves into the creation and testing of a new protocol, Clicktok, in an attempt to detect fraudulent clicks from real clicks where ad companies may pay money per click on their ads. There are various attack methods used to generate these clicks whether it comes from a bot farm, or from malicious apps installed on a normal user's device, detecting inorganic clicks from organic clicks is a concern to prevent adversaries from profiting off from ad companies. Clicktok attempts to classify these clicks by utilizing the fact that fake generated click spam imitates user traffic in an attempt to stay stealthy. By analyzing repeating patterns in a user's click history, Clicktok aims to identify these false clicks from real clicks.
+The paper present a prototype system to protect EMRs when outside of the trusted domain of a hospital. Authors use Access based encryption (ABE) to provide fine-grained, policy-based encryption. To facilitate the implementation of the proposed system, the authors have developed a software library to support different modes of ABE. The paper focuses to develop meaningful techniques for protecting the privacy of records and targets to address 5 major issues focusing to establish the importance of offline access to the emergency medical records. The paper also presents how the proposed system enables realistic use cases for example treatment of minors and advanced directives. To ensure as smooth and secure access to the EMRs systems the authors also came up with appropriate policies which are quite complex policies in nature. The paper describes a policy engine providing automated support for policy generation. Finally, the paper also presents a a proof-of-concept mobile app allowing patients to access the encrypted records on their mobile phone (iPhone) offline and also explains the mechanism to securely export EMR records to other cloud-based EMR providers.
+
 ***
 
 ## Presentation
@@ -50,9 +51,9 @@ The paper uses a mobile application called "iHealthEMR" that interface with the 
 In the mobile application, the authors implement a "lazy" decryption, which only performs decryptions of records on an as-needed basis. This results into using less memory and less processing power, thus preserving battery life. Eventually the usability can be improved by selecting decryption once, and it allows for all other entries to be decrypted in the background. Other functions from the application are the supporting of caching encrypted medical records for when network connectivity is unavailable. Finally, one of the main highlights is that the application allows users to choose whether to trust Google with the privacy of their records. Even if the records cannot be uploaded to Google Health, the system's architecture supports other cloud-based EMR systems as well.
 
 ### Experimentation
-In order to evaluate the ABE techniques to medical records, the authors conducted several experiments using their implementation.
+In order to evaluate Clicktok, the authors of the paper, used the click traffic obtained, filtered it and exposed it to a testbed with malicious apps and click malware. Through this they were able to get a click traffic that contained both legitimate and fake clicks.
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_14/images/Akinyele_Fig2.png" title="Figure 1: CP-ABE and KP-ABE Encryption and Decryption Times" width="250" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_14/images/Akinyele_Fig2.png" title="Figure 1: Implementation of Attribute-Based Encryption" width="250" >}}
 In their experimentation, they consider *stealthy* attackers to be under 5 clicks a day per device, *sparse* to be 5-15 clicks, and *firehose* to be over 15 clicks. From Table 1, it can be seen that Clicktok with a passive defense is effective in identifying click fraud. With a longer ad network duration, leads to better inference, especially against stealth attacks.
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_14/images/Akinyele_Fig3.png" title="Figure 1: Implementation of Attribute-Based Encryption" width="250" >}}
