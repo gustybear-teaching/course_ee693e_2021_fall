@@ -39,9 +39,7 @@ The paper present a prototype system to protect EMRs when outside of the trusted
 - End-to-end Encryption and 
 
 ### Detailed Comments
-The paper very well addresses some major problem areas triggering the requirements of an effective systems: 1) EMR systems’ reliance on transport security;  
-2) Access control is online only; 3) Most hospital systems today require online access control decisions; 4) Records are not well protected today; 5) Provider-centric environment and 6) Complexity of access policies.
-
+The paper very well addresses some major problem areas triggering the requirements of an effective systems: 1) EMR systems’ reliance on transport security; 2) Access control is online only; 3) Most hospital systems today require online access control decisions; 4) Records are not well protected today; 5) Provider-centric environment and 6) Complexity of access policies.
 When records are transmitted among institutions, they are typically protected only by transport-level protocols. When the server or database is unavailable, access control decisions cannot be made. Today’s EMR systems patients have little or no access to their medical records. Despite the high level of regulation surrounding EMR use, medical systems do not adequately protect records. The state of the art access control matrix is overly complex, costly, and error prone. Therefore, in this paper, the author describes  efforts to provide self protecting EMRs on mobile devices using recent developments in attribute-based encryption (ABE). The paper highlights on Role-based and Content-based Access Control and focuses on their proposed Automated policy generation techniques including a a high-level overview of the system.
 
 ### Implementation
