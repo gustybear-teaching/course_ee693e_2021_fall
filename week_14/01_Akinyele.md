@@ -41,29 +41,24 @@ As for the potential weakness in Clicktok, a more advanced click randomization/g
 
 ### Implementation
 
+The paper describes a high-level overview of how medical institutions provide an encrypted CCR to users, and how cloud-based storage is implemented via Google Health (Fig. 1). Before medical information is released to the user, an access policy is implemented into the nodes of the CCR. Here, an attribute-based encryption (ABE) is implemented into the CCR. The policies are initially specified by the medical provider and may consider attributes of the patient such as the age of the patient, the sensitivity of the data, and the identity of the authoring agent. 
 
-The paper uses an app called "iHealthEMR" that interfaces with the provider's server and, optionally, with cloud-ase storage by Google Health. The primary functions of the app is to browse, update, and secure CCR.
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_14/images/Akinyele_Fig1.png" title="Figure 1: Implementation of Attribute-Based Encryption" width="250" >}}
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/ClicktokSystemArchitecture.png" title="System Architecture" width="320" >}}
+The paper uses a mobile application called "iHealthEMR" that interface with the provider's server and, optionally, with cloud-based storage by Google Health. The primary function of the application is to browse, update, and secure CCRs. There are two interfaces with the application. One of them is to interact with the web service provided by the hospital. The user can read encrypted CCRs downloaded on their phones by decrypting it using ABE private keys stored on the user's phone's keychain. The second interface interacts with Google Health, a cloud-based storage. This interface allows users to read and write any of their records and be given the option to store it on the cloud server.
 
-They then use a moving window function to reduce sensitivity to synchronization errors from timing misalignments.
-
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/ClicktokSystemPartitioning.png" title="Traffic Partitioning" width="300" >}}
-
-Afterwards by examining the weight matrix, they can determine which patterns are repeated and are potentially fraudulent clicks, as patterns matrices that are repeated can be attributed to organic click spam (fake clicks imitating user inputs). They cluster the closely related patterns matrices, to then determine inorganic click spam by finding clusters with a higher entropy, characteristic of clicks generated from a randomized/constant time offsets. The remaining clicks can then be attributed to real users.
-
-Another technique Clicktok applies is bait clicks (active defense), where ad networks inject bait clicks, so any malicious users that may try to imitate these bait clicks are identified with Clicktok's algorithm and flagged as fraudulent.
+In the mobile application, the authors implement a "lazy" decryption, which only performs decryptions of records on an as-needed basis. This results into using less memory and less processing power, thus preserving battery life. Eventually the usability can be improved by selecting decryption once, and it allows for all other entries to be decrypted in the background. Other functions from the application are the supporting of caching encrypted medical records for when network connectivity is unavailable. Finally, one of the main highlights is that the application allows users to choose whether to trust Google with the privacy of their records. Even if the records cannot be uploaded to Google Health, the system's architecture supports other cloud-based EMR systems as well.
 
 ### Experimentation
 In order to evaluate Clicktok, the authors of the paper, used the click traffic obtained, filtered it and exposed it to a testbed with malicious apps and click malware. Through this they were able to get a click traffic that contained both legitimate and fake clicks.
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/ClicktokTable1.png" title="Table 1: Passive Detection" width="320" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_14/images/Akinyele_Fig2.png" title="Figure 1: Implementation of Attribute-Based Encryption" width="250" >}}
 In their experimentation, they consider *stealthy* attackers to be under 5 clicks a day per device, *sparse* to be 5-15 clicks, and *firehose* to be over 15 clicks. From Table 1, it can be seen that Clicktok with a passive defense is effective in identifying click fraud. With a longer ad network duration, leads to better inference, especially against stealth attacks.
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/ClicktokTable2.png" title="Table 2: Detection Across Multiple Clickstreams" width="320" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_14/images/Akinyele_Fig3.png" title="Figure 1: Implementation of Attribute-Based Encryption" width="250" >}}
 They also categorized and analyzed different click categories, where sponsored are advertisements displayed by search engines, contextual are ads displayed on a webpage based on keywords present in the webpage, and mobile are ads exclusively present on mobile devices. From the results in Table 2, it is shown that the Clicktok is able to identify fraudulent clicks across the ad categories at a high true positive rate of ~90%, and a low false positive rate at around ~0.004%.
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/ClicktokTable3.png" title="Table 3: Active Defense" width="320" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_14/images/Akinyele_Table1.png" title="Figure 1: Implementation of Attribute-Based Encryption" width="250" >}}
 When applying the active defense with bait clicks, it can be seen in Table 3, that it improves detection rates. With both the increase in true positive rates, and decrease in false positive rates, show that an active defense may be important in identifying fake clicks.
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_02/images/ClicktokTable4.png" title="Table 4: Comparation of Clicktok" width="320" >}}
