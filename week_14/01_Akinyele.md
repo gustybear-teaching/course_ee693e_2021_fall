@@ -17,8 +17,7 @@ tags:
 
 ***
 ## Paper Summary
-The paper present a prototype system to protect EMRs when outside of the trusted domain of a hospital. Authors use Access based encryption (ABE) to provide fine-grained, policy-based encryption. To facilitate the implementation of the proposed system, the authors have developed a software library to support different modes of ABE. The paper focuses to develop meaningful techniques for protecting the privacy of records and targets to address 5 major issues focusing to establish the importance of offline access to the emergency medical records. The paper also presents how the proposed system enables realistic use cases for example treatment of minors and advanced directives. To ensure as smooth and secure access to the EMRs systems the authors also came up with appropriate policies which are quite complex policies in nature. The paper describes a policy engine providing automated support for policy generation. Finally, the paper also presents a a proof-of-concept mobile app allowing patients to access the encrypted records on their mobile phone (iPhone) offline and also explains the mechanism to securely export EMR records to other cloud-based EMR providers.
-
+This paper delves into the creation and testing of a new protocol, Clicktok, in an attempt to detect fraudulent clicks from real clicks where ad companies may pay money per click on their ads. There are various attack methods used to generate these clicks whether it comes from a bot farm, or from malicious apps installed on a normal user's device, detecting inorganic clicks from organic clicks is a concern to prevent adversaries from profiting off from ad companies. Clicktok attempts to classify these clicks by utilizing the fact that fake generated click spam imitates user traffic in an attempt to stay stealthy. By analyzing repeating patterns in a user's click history, Clicktok aims to identify these false clicks from real clicks.
 ***
 
 ## Presentation
@@ -28,14 +27,12 @@ The paper present a prototype system to protect EMRs when outside of the trusted
 
 ## Review
 ### Strengths
-- This paper focuses to develop effective techniques for protecting the privacy of emergency medical records and targets to address 5 major issues or problem areas. 
-- The paper very well addresses various complexity of access policies to ensure information security. 
-- In this paper, the author describes  efforts to provide self protecting EMRs on mobile devices using recent developments in attribute-based encryption (ABE).
-- The paper scrutizes the importance of offline access thoroghly which eventually puts some light on understanding the importance of emergency access to medical records during massive catastropic failures or similar disaster situations.  
+- This paper offers a method of detecting fraudulent clicks that does not rely on a threshold based defense.
+- By taking advantage that click fraud often uses previous user traffic in order to fabricate fake clicks, Clicktok is able to identify click fraud even though the attacker may be imitating organic clicks.
 
 ### Weaknesses
-- A 128-bit size key is usually the less secured type of AES encryption.
-- The paper mentions about Attribute-Based Encryption (ABE) system to protect EMRs against cyber threat but recent development in this area offers a hint that this system might not be completely full proved to protect various types of cyber threats. 
+- Although Clicktok seems promising in detecting fraudulent clicks at various rates of attack, it seem it may be possible for an adversary to create a method that is able to bypass Clicktok's detection system.
+- It may be difficult to keep track of malicious clicks with IP aggregation and churn. As some networks may try to avoid exposing IP addresses, it makes attributing fraudulent clicks to a certain source more difficult.
 
 ### Detailed Comments
 By detecting the timing characteristics of click traffic feed received at ad networks, one can detect fraudulent clicks that attempt to be stealthy by sending a low amount of clicks. This is useful as farming clicks is becoming more economical with advances in technology, meaning that more attackers can have the luxury of sending a low amount of fraudulent clicks in an attempt to not be flagged as fake. Then even with a wide range of rates which an attacker can send fake clicks, whether the adversary decides to imitate previous user clicks or generate random clicks, Clicktok is able to identify repeating patterns of the imitation clicks, or the randomness of the clicks as not being attributed to real clicks.
@@ -53,16 +50,16 @@ The paper uses a mobile application called "iHealthEMR" that interface with the 
 In the mobile application, the authors implement a "lazy" decryption, which only performs decryptions of records on an as-needed basis. This results into using less memory and less processing power, thus preserving battery life. Eventually the usability can be improved by selecting decryption once, and it allows for all other entries to be decrypted in the background. Other functions from the application are the supporting of caching encrypted medical records for when network connectivity is unavailable. Finally, one of the main highlights is that the application allows users to choose whether to trust Google with the privacy of their records. Even if the records cannot be uploaded to Google Health, the system's architecture supports other cloud-based EMR systems as well.
 
 ### Experimentation
-In order to evaluate Clicktok, the authors of the paper, used the click traffic obtained, filtered it and exposed it to a testbed with malicious apps and click malware. Through this they were able to get a click traffic that contained both legitimate and fake clicks.
+In order to evaluate the ABE techniques to medical records, the authors conducted several experiments using their implementation.
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_14/images/Akinyele_Fig2.png" title="Figure 1: Implementation of Attribute-Based Encryption" width="250" >}}
-In their experimentation, they consider *stealthy* attackers to be under 5 clicks a day per device, *sparse* to be 5-15 clicks, and *firehose* to be over 15 clicks. From Table 1, it can be seen that Clicktok with a passive defense is effective in identifying click fraud. With a longer ad network duration, leads to better inference, especially against stealth attacks.
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_14/images/Akinyele_Fig2.png" title="Figure 2: CP-ABE and KP-ABE Encryption and Decryption Times" width="250" >}}
+In their experimentation, the authors perform ciphertext-policy scheme micro benchmarks for the different ABE schemes.This figure summarizes the encryption and decryption times on their Intel-based workstation and mobile devices.
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_14/images/Akinyele_Fig3.png" title="Figure 1: Implementation of Attribute-Based Encryption" width="250" >}}
-They also categorized and analyzed different click categories, where sponsored are advertisements displayed by search engines, contextual are ads displayed on a webpage based on keywords present in the webpage, and mobile are ads exclusively present on mobile devices. From the results in Table 2, it is shown that the Clicktok is able to identify fraudulent clicks across the ad categories at a high true positive rate of ~90%, and a low false positive rate at around ~0.004%.
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_14/images/Akinyele_Fig3.png" title="Figure 3: Storage Overhead Incurred by ABE Encryption of Medical Records" width="250" >}}
+In this experimentation, a reltionship was determined from the size of an encrypted node for various encryption policies. The "Minor" example represents the worst case encryption policy.
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_14/images/Akinyele_Table1.png" title="Figure 1: Implementation of Attribute-Based Encryption" width="250" >}}
-When applying the active defense with bait clicks, it can be seen in Table 3, that it improves detection rates. With both the increase in true positive rates, and decrease in false positive rates, show that an active defense may be important in identifying fake clicks.
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_14/images/Akinyele_Table1.png" title="Table 1: Policy Complexity" width="250" >}}
+The table summarizes the timestamp for an access policy as well as the number of leaves needed to to compute the policy in a binary tree.
 
 ### Audience Questions
 1. Is there a reason 128 bit size was used in the AES over other larger bit sizes?
