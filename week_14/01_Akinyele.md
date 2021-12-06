@@ -56,12 +56,15 @@ In the mobile application, the authors implement a "lazy" decryption, which only
 In order to evaluate the ABE techniques on medical records, the authors conducted several experiments using their implementation.
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_14/images/Akinyele_Fig2.png" title="Figure 2: CP-ABE and KP-ABE Encryption and Decryption Times" width="250" >}}
+
 In their experimentation, the authors measured time required for encryption and decryption under various scenarios and tested it on their Intel-based workstations and mobile devices.
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_14/images/Akinyele_Fig3.png" title="Figure 3: Storage Overhead Incurred by ABE Encryption of Medical Records" width="250" >}}
+
 To also show that the techniques induce an acceptable cost in record storage, the authors measured the ciphertext size overhead incurred by their encryption solution.
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_14/images/Akinyele_Table1.png" title="Table 1: Policy Complexity" width="250" >}}
+
 This table summarize the sample polcies, its types of timestamps, the number of leaves required to compute each policy in a binary tree. 
 
 ### Discussion
