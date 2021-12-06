@@ -36,7 +36,6 @@ The paper present a prototype system to protect EMRs when outside of the trusted
 ### Weaknesses
 - A 128-bit size key is usually the less secured type of AES encryption.
 - The paper mentions about Attribute-Based Encryption (ABE) system to protect EMRs against cyber threat but recent development in this area offers a hint that this system might not be completely full proved to protect various types of cyber threats. 
-- End-to-end Encryption and 
 
 ### Detailed Comments
 The paper very well addresses some major problem areas triggering the requirements of an effective systems: 1) EMR systems’ reliance on transport security; 2) Access control is online only; 3) Most hospital systems today require online access control decisions; 4) Records are not well protected today; 5) Provider-centric environment and 6) Complexity of access policies.
