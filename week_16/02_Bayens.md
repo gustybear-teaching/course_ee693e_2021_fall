@@ -38,20 +38,33 @@ Although these are the two main components to be implemented, there are also som
 Once the smartphone application is registered as a 2FA device, the flow of authentication is as follows. When a client logs into the server, the server will request the 2FA device, or smartphone in our case, a token. To get this token, a challenge is sent in a form of a JavaScript file, which is encrypted with a key which only the server and smartphone have. The smartphone knows the answer to this JavaScript file, which is used to verify the URL. Once the smartphone sends the decryption key to the client, it will start a timer, where the browser will execute the JavaScript file to unobfuscate the ciphertext it contains. The obfuscation process contains references to the legitimate URL, which is obtained through the browser’s reference to the URL, window.location, which cannot be modified by a phishing user. Once the challenge is completed, the answer is sent to the smartphone for verification. If correct and within the timing threshold, the smartphone will send the token to verify the login.
 
 ### Experimentation
+The authors wanted to embed contrast agents or markers at precise Cartesian coordinates within the 3D printed modes. For 3D printing filament, the authors would produce three types of filaments. One that was made using ABS pills that provides extremely durable thermoplastic, and other variants of ABS that is coated with GNRs or DTTCI. These types of filaments were implemented by embedding and coating the objects, then evaluating using Raman spectroscopy and CT scans.
+
+Figure 1 is given by evaluating the Raman spectra of the blank or unmodified 3D printed disk, a 3D coated with GNRs or DTTCI, or a 3D printed disk with GNRs or DTTCI embedded filament. To achieve the embedding of the filaments, a C++ program was written to allow users to embed filament at desired locations by modifying the G-code. In this case, the 3D printer would switch between a nozzle with normal filament to a nozzle with GNR or DTTCI filament. When using Raman spectroscopy on the disk the 3D disk is first exited with a 785 nm light for 20s per accumulation of data.
+
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_16/images/Bayens_Fig12.png" title="Figure 1: Mean Measured of Raman Scattering" width="250" >}}
+
+To differentiate between the three types of disks, the authors would use the mean and standard deviation of the spectra to distinguish the cluster of data set (Figure 2).
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_16/images/Bayens_Fig13.png" title="Figure 2: Classifcation Using Mean and Standard Deviation" width="250" >}}
 
+To demonstrate Figure 3 and Figure 4, the authors evaluated their approach on a tibial prothesis. Since prosthetics differ slightly between patients, the authors assume that they need to perform a malicious print identification periodically on the prosthetic. Acoustic error detection was used to identify malicious prints in the early parts of the printing stage, and an FFT analysis was perform to compare malicious prints against target and training prints.
+
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_16/images/Bayens_Fig15.png" title="Figure 3: Comparison of Rectilinear 60% Fill vs. Malicious 20% Honeycomb Fill" width="250" >}}
+
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_16/images/Bayens_Fig16.png" title="Figure 4: Comparison of Frequency Response Between Different Printings" width="250" >}}
 
 ### Discussion
-As we can see from the first figure, we can see all of the variations in timings that 2FA-PP observes, whether it being a normal login, to a phishing attack which modifies the obfuscated code. Although phishing attacks are able to successfully modify the obfuscated code, the round trip and modification takes a considerable amount of time, where we can set our threshold to contain the vast majority of our baseline timing, while preventing a majority of phishing attacks.
+Figure 1 shows the mean measurements of Raman scattering of 3D printed disk. The spectrum of the 3D printed disk coated with DTTCI has huge photon counts across the spectrum. This is also true with the embedded filament design, which falls between the control experiment and the fully coated experiment. The challenge with Raman scattering for analyzing the model is that this does not reflect he approximate distribution of contrast agent embedded in the filament, since it might be a cluster or sparse of contrast agents of markers. Although the figure only shows results with DTTCI, it was concluded that a similar response can be made with using GNRs as well. 
 
-As from the second figure, by setting the threshold accordingly, we see that attackers within a different locality as the user have a difficult time successfully attacking 2FA-PP. However, if they are in the same locality, such as the same Wi-Fi or Hotspot, the success rate is significantly higher. We could reduce the success rate by tightening our threshold, but this is at the cost of false positives, where legitimate logins are deemed suspicious.
+Figure 2 helps with the idea of classification of the three types of disks: ABS; GNRs embedded disks; and DTTCI embedded disks. The authors trained a logistic regression model, and the classification using mean and standard deviation shows 100% accuracy against the blank ABS (226 samples) filament for both GNRs (179 samples) and DTTCI (71 samples) embedded filaments.
 
-For the third figure, as this is a scalable implementation, we can send multiple challenges to the client. This lessens the chance for an attacker to successfully complete all of the challenges within the given time frame, therefore securing the login from phishing attacks. We find that at about 5 challenges, gives the best chance of preventing phishing attacks, even with local adversaries.
+Figure 3 shows the confident value of both the target print and the malicious print. By setting the confidence threshold to zero, a positive error classification can be made within the first 360s of the print. The threshold value may be set to anything less than 18 without causing a false positive. Overall, the acoustic error detection saves over 2 hours of print time and prevents potentially harmful prints. 
+
+Figure 4 is the FFT of a target print and a malicious print compared to a training print. The malicious print shows a different frequency response near 0.2 Hz as highlighted by the lower box. The upper box highlights the closeness of the peaks between the training and target prints while differentiating from the malicious print. The significance of this figure is that during the printing of a 3D object with 111 layers, it takes less than 1% of the total print time to identify the error.
+
+Figure
 
 ### Questions
 (1) Why did they choose acoustic classification over other classification techniques such as image classification?
