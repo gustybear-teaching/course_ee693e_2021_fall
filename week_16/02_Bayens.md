@@ -1,17 +1,16 @@
 ---
-title: "02: 2FA-PP: 2nd Factor Phishing Prevention
-Enis Ulqinaku, Daniele Lain, Srdjan Capkun"
-date: 2021-09-02
+title: "02: See No Evil, Hear No Evil, Feel No Evil, Print No Evil? Malicious Fill Patterns Detection in Additive Manufacturing
+Christian Bayens, Tuan Le, Raheem Beyah, Mehdi Javanmard"
+date: 2021-12-15
 type: book
 commentable: true
 # Provide the name of the presenter
-summary: "Presenter(s): Alvin Yang and Thomas Yang"
+summary: "Presenter(s): Clyde James Felix, Saige Dacuycuy, Jeanalyn Wadsack-Myers"
 # Provide other tags that describe the paper
 tags:
 - teaching
 - ee693e
-- fraud
-- 2FA
+- additive manufacturing
 ---
 ***
 ## Paper Summary
