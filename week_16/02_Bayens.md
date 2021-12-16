@@ -40,11 +40,11 @@ Once the smartphone application is registered as a 2FA device, the flow of authe
 ### Experimentation
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_16/images/Bayens_Fig12.png" title="Figure 1: Mean Measured of Raman Scattering" width="250" >}}
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_16/images/Bayens_Fig13.jpg" title="RClassifcation Using Mean and Standard Deviation" width="200" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_16/images/Bayens_Fig13.png" title="Classifcation Using Mean and Standard Deviation" width="250" >}}
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_16/images/Bayens_Fig15.jpg" title="Comparison of Rectilinear 60% Fill vs. Malicious 20% Honeycomb Fill" width="200" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_16/images/Bayens_Fig15.png" title="Comparison of Rectilinear 60% Fill vs. Malicious 20% Honeycomb Fill" width="250" >}}
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_16/images/Bayens_Fig16.jpg" title="Comparison of Frequency Response Between Different Printings" width="200" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_16/images/Bayens_Fig16.png" title="Comparison of Frequency Response Between Different Printings" width="250" >}}
 
 ### Discussion
 As we can see from the first figure, we can see all of the variations in timings that 2FA-PP observes, whether it being a normal login, to a phishing attack which modifies the obfuscated code. Although phishing attacks are able to successfully modify the obfuscated code, the round trip and modification takes a considerable amount of time, where we can set our threshold to contain the vast majority of our baseline timing, while preventing a majority of phishing attacks.
