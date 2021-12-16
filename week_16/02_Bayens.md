@@ -48,12 +48,16 @@ To differentiate between the three types of disks, the authors would use the mea
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_16/images/Bayens_Fig13.png" title="Figure 2: Classifcation Using Mean and Standard Deviation" width="250" >}}
 
-To demonstrate Figure 3 and Figure 4, the authors evaluated their approach on a tibial prothesis. Since prosthetics differ slightly between patients, the authors assume that they need to perform a malicious print identification periodically on the prosthetic. Acoustic error detection was used to identify malicious prints in the early parts of the printing stage, and an FFT analysis was perform to compare malicious prints against target and training prints.
+To demonstrate Figure 3 and Figure 4, the authors evaluated their approach on a tibial prothesis. Since prosthetics differ slightly between patients, the authors assume that they need to perform a malicious print identification periodically on the prosthetic. Acoustic error detection was used to identify malicious prints in the early parts of the printing stage, and an FFT analysis was performed to compare malicious prints against target and training prints.
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_16/images/Bayens_Fig15.png" title="Figure 3: Comparison of Rectilinear 60% Fill vs. Malicious 20% Honeycomb Fill" width="250" >}}
 
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_16/images/Bayens_Fig16.png" title="Figure 4: Comparison of Frequency Response Between Different Printings" width="250" >}}
+
+In Figure 5, the G-Code of the intended print was compared to a CT scan at 15-micron/voxel resolution. To demonstrate a proof-of-concept, steel particles were injected into the tibial knee implant prints in order visualize its inner structure. Steel particles would produce similar responses to GNRs by exhibiting high X-ray density.
+
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_16/images/Bayens_Fig16.png" title="Figure 5: Comparison of G-code Simulation vs CT Scan of the Printed Model" width="250" >}}
 
 ### Discussion
 Figure 1 shows the mean measurements of Raman scattering of 3D printed disk. The spectrum of the 3D printed disk coated with DTTCI has huge photon counts across the spectrum. This is also true with the embedded filament design, which falls between the control experiment and the fully coated experiment. The challenge with Raman scattering for analyzing the model is that this does not reflect he approximate distribution of contrast agent embedded in the filament, since it might be a cluster or sparse of contrast agents of markers. Although the figure only shows results with DTTCI, it was concluded that a similar response can be made with using GNRs as well. 
@@ -64,10 +68,12 @@ Figure 3 shows the confident value of both the target print and the malicious pr
 
 Figure 4 is the FFT of a target print and a malicious print compared to a training print. The malicious print shows a different frequency response near 0.2 Hz as highlighted by the lower box. The upper box highlights the closeness of the peaks between the training and target prints while differentiating from the malicious print. The significance of this figure is that during the printing of a 3D object with 111 layers, it takes less than 1% of the total print time to identify the error.
 
-Figure
+Figure 5 is the comparison between the target design and the printed model under a CT scan. With larger structures like a tibial prosthesis, Raman spectroscopy cannot be used as the sole analyzer for structural integrity. For designs as large as 30-mm, a CT scan approach can be used to see physical changes in the structure. In this case, since the steel particles have high X-ray density, the inner structure of the tibial prosthesis can be analyzed. The idea of using steel particles can further introduce the use of GNRs into post-production evaluation.
 
 ### Questions
 (1) Why did they choose acoustic classification over other classification techniques such as image classification?
+
+
 
 (2) Does the paper mentions about making the MySQL database faster/more efficient as their proposed system introduced more overheads because of choosing identity-based encryption scheme?
 
