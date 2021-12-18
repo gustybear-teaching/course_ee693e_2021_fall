@@ -45,6 +45,9 @@ Backscatter has been used in commercial radio frequency applications in the sub-
 
 ### Implementation
 
+The range of backscatter communication systems such as RFID systems assuming free-space propagation is estimated by the value of R which is proportional to the waveleght time rootover transmit and receive gain. Compared to a typical UHF RFID scenario, their prototype introduces an increase in the combined transmit and receive gain of 200 or 23 dB. The frequency scaling from 915 MHz to 24.5 GHz is 26.8 or 14.3 dB. This translates to an ~3-dB reduction in the achievable range. The system prototype comprises a transmit antenna with 20 dB of gain and a receive antenna with 10 dB of gain. The prototype introduces an increase in the combined transmit and receive gain of 200 or 23 dB.The frequency scaling from 915 MHz to 24.5 GHz is 26.8 dB or 14.3 dB.
+
+All printing was performed with a Dimatix DMP-2831 material deposition inkjet printer Four layers of SNP ink were printed at a 20-$m drop-to-drop spacing and with a 600-s inter-layer delay.The printer’s print table was heated to a maximum of 60 °C to promote solvent evaporation between layers.Vias were formed manually with a Dremel rotary tool driving a 0.5 mm drill bit. For the bias signal excitation port, a screw-on end-launch SMA connector was used (Southwest 292-06A-6); this provided a coaxial-to-microstrip transition. For the simulations, the Keysight Advanced Design System (ADS) solver was used. A full electromagnetic analysis with the method of moments was applied to the backscatter modulator and 5 × 1-antenna array to estimate the losses from the LCP substrate and SNP, the fringing fields and the electromagnetic coupling between ports. 
 
 ### Experimentation
 
