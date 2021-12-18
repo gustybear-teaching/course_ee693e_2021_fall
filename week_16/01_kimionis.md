@@ -26,7 +26,7 @@ The increasing prevalence of IoT requires the use of scalable and robust communi
 ***
 
 ## Presentation
-{{< youtube C2LOWF_K-FM >}}
+{{<https://youtu.be/KCHre1Z_bFc >}}
 
 ***
 
