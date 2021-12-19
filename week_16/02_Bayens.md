@@ -14,28 +14,35 @@ tags:
 ---
 ***
 ## Paper Summary
-Two factor authentication (2FA) schemes help provide a strong user authentication alongside the traditional password. However, many 2FA schemes are still vulnerable to phishing attacks, where the 2FA can be phished along with the password. This is where the paper proposes 2nd Factor Phishing Prevention, 2F-PP, which uses the browser’s API to communicate with an external device, such as a mobile phone, and lets the phone check what domain the browser is connected to. With this domain check, the phone can decide whether to authenticate the log-in or reject it and alert the user of an attempted attack.
+
 ***
 ## Presentation
-{{< youtube PH9HPmnIK24 >}}
+{{< youtube 4Aezj_TOHoQ >}}
 ***
 ## Review
 ### Strengths
-- 2FA-PP requires little user interaction to set up, and no user interaction per login once set up.
-- Time added by 2FA-PP is negligible, adding about less than a seconds worth towards the login time.
-- Utilizes currently available software and hardware used in current 2FA schemes, such as bluetooth and browser APIs, so implementation into current systems is feasible.
+- Provides security in AM due to implementing malicious print detection.
+- 100% accurate when predicting malicious prints.
 
 ### Weaknesses
-- As 2FA-PP is timing based, attackers within the same locality as the user (such as on the same Hotspot or Wi-Fi) has a significantly higher chance at success than other attackers
+- Materials verification system might be costly due to having Raman Spectroscopy/CT machines.
+- It is possible there might be an error due to having small sample sizes.
+
 ### Detailed Comments
-2FA-PP is a novel 2FA scheme which helps mitigate phishing attacks. Although it has a poor time preventing phishing attacks on the same network, with an attacker success rate having a worse case scenario of 35% success rate if not tuned correctly, it is more than likely that the phishing attack will occur from a proxy server, moving its location far from the user, meaning it would be able to prevent a majority of phishing attacks. Since 2FA-PP only requires the user to set up an application and the server to set up a database to handle interactions with the application, it is a user friendly scheme which is easy to implement into existing structures, using current generation browser APIs to communicate with the phone’s BLE, which is readily available to a majority of users who use 2FA. Some worries for 2FA-PP stems from the use of the browser’s API to communicate with BLE, as this can be a vector for attack by the phishing user where they can take over communication and report a real domain as opposed to the phishing domain, but this is circumvented by the use of obfuscation techniques, such that the report of the domain will be unobfuscated in a certain way, preventing a phishing user from figuring out and using this obfuscation technique within the given time frame.
+The paper focuses on preventing in 3D printing by implementing malicious fill pattern detection techniques. The design of this proposal is composed of verification of design parameters that utilize analysis of acoustic signals, spatial position of machine components, and embedded materials. The reason of using these parameters is to be able to get access to AM information process without accesing STL file of G-code instructions.
+
+The authors contributed this paper on:
+* Multi-layered design verifications in AM (design, manufacturing, and materials).
+* Proposed implementations of approach for in-house and third-party AM producers.
+* Prosthetic Tibial Implant case study.
 
 ### Implementation
-To implement 2FA-PP, there are two components: the smartphone application and the server. The smartphone application will act as the software token, and will communicate with the server to keep a set of tokens up to date. The smartphone application requires minimal permissions from the user, only needing Bluetooth access, which is used to communicate with the browser. As for the server, it will handle the registration of the 2FA device, or our smartphone application,  and each instance of a login which requires a 2FA.
 
-Although these are the two main components to be implemented, there are also some intermediate steps that are taken. The client side, which would be the computer logging onto the server, needs Bluetooth functionality, and the ability to run JavaScript, the two of which are widely available on a majority of laptops and desktops.
+This paper evaluates the identification of malicious prints, observation of the detected error, and the post-production materials verification. A logistic regression is used to detect whether there is a malicious print or not. The Area Under Receiver operating characteristic (AUROC) curve is a metric to determine the performance of the detection. In this experiment, small sample size is used because 3D printing takes long. This experiment is tested on using different printer models (TazMini, Orion Delta, Taz6). This experiment was also tested on a noisy environment. When visualizing malicious prints, researchers used spatial sensing to observe real-time.
 
-Once the smartphone application is registered as a 2FA device, the flow of authentication is as follows. When a client logs into the server, the server will request the 2FA device, or smartphone in our case, a token. To get this token, a challenge is sent in a form of a JavaScript file, which is encrypted with a key which only the server and smartphone have. The smartphone knows the answer to this JavaScript file, which is used to verify the URL. Once the smartphone sends the decryption key to the client, it will start a timer, where the browser will execute the JavaScript file to unobfuscate the ciphertext it contains. The obfuscation process contains references to the legitimate URL, which is obtained through the browser’s reference to the URL, window.location, which cannot be modified by a phishing user. Once the challenge is completed, the answer is sent to the smartphone for verification. If correct and within the timing threshold, the smartphone will send the token to verify the login.
+For post-production materials veridication section, GNRs and DTTCI can be combined to be used as a contrast agent.
+
+This experiment is tested on a specific use case on printing a prosthetic Tibial Implant. 
 
 ### Experimentation
 The authors wanted to embed contrast agents or markers at precise Cartesian coordinates within the 3D printed modes. For 3D printing filament, the authors would produce three types of filaments. One that was made using ABS pills that provides extremely durable thermoplastic, and other variants of ABS that is coated with GNRs or DTTCI. These types of filaments were implemented by embedding and coating the objects, then evaluating using Raman spectroscopy and CT scans.
@@ -51,7 +58,6 @@ To differentiate between the three types of disks, the authors would use the mea
 To demonstrate Figure 3 and Figure 4, the authors evaluated their approach on a tibial prothesis. Since prosthetics differ slightly between patients, the authors assume that they need to perform a malicious print identification periodically on the prosthetic. Acoustic error detection was used to identify malicious prints in the early parts of the printing stage, and an FFT analysis was performed to compare malicious prints against target and training prints.
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_16/images/Bayens_Fig15.png" title="Figure 3: Comparison of Rectilinear 60% Fill vs. Malicious 20% Honeycomb Fill" width="250" >}}
-
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/raw/main/week_16/images/Bayens_Fig16.png" title="Figure 4: Comparison of Frequency Response Between Different Printings" width="250" >}}
 
