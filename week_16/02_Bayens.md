@@ -14,7 +14,7 @@ tags:
 ---
 ***
 ## Paper Summary
-
+This paper presents a scheme to verify and detect intrusion within the additive manufacturing (AM)  printing process without the use of printer firmware and the controller PC. The 3D print is analysed through three layers of verification: side-channel verification of acoustic signatures, real-time spatial tracking of machine components, and post-production materials analysis. Each layer of verification is tested on simple 3D structures using three different types of printers and one CNC machine before the full scheme is evaluated. Lastly, to test the effectiveness of the scheme, a use case with a prosthetic tibial knee implant was done. The scheme proved to be very promising for mass production AM and for third-party AM producers.
 ***
 ## Presentation
 {{< youtube 4Aezj_TOHoQ >}}
