@@ -59,6 +59,7 @@ The simplest form of PSK is BPSK, so we are assuming you are asking the differen
 
 2.	Do you know the cost for using single-transisiter front-ends for backscatter instead of active mixers?
 
+Active mixer allows more flexibility to design the communication systems. There could be possibly two types of systems design depending on how the mixer is connected. In one set up two separate mixures can be used to connect the transmitter and the receiver. While on the other hand, a more of a Radar like system can be designed using a single mixer and connecting the transmit and the receiving antenna from to the same mixure and using an active mixer in the set up allows the synchronizaion of the modulated signal afterwards. The cost of the system is driven by the trade-off between the design drivers and complexity to implement the system and also cost vs. utility. The paper lacks to present a detailed cost analysis for the proposed system. However, in the paper they mentions about if an active mixer costs 10 USD then a using a single transitor will cost 1 USD. From that notion, we can assume that if we use a single transistor it will reduce the overall system cost at least one or two orders of magnatude. 
 
 4.	Is the LCP substrate the only/best option for them?
 
