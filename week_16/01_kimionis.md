@@ -22,7 +22,9 @@ tags:
 
 ***
 ## Paper Summary
-The increasing prevalence of IoT requires the use of scalable and robust communication systems that can deliver higher data rates with low power consumption. This paper investigates the novel technology to achieve this combination of high data rate and minimized energy consumption. By utilizing the wide bandwidth and large communication rates of mmWave technology, this paper uses backscattering to provide gigabit data rates with low-complexity approach. The low complexity front end reduces the cost and time it takes to fabricate this technology enabling it to be scalable.
+
+The increasing prevalence of IoT requires the use of scalable and robust communication systems that can deliver higher data rates with low power consumption. This paper investigates the novel technology to achieve this combination of high data rate and minimized energy consumption. By utilizing the wide bandwidth and large communication rates of mmWave technology, this paper uses backscattering to provide gigabit data rates with low-complexity approach. The low complexity front end reduces the cost and time it takes to fabricate this technology enabling it to be scalable. In this paper, the authors used additive manufacturing and inkjet printing techniques. A millimetre-wave transceiver is designed and a low power consumption (0.17 pJ per bit) system at millimetre-wave frequencies of 24–28 GHz is sucessfully demonstrated in the paper.
+
 ***
 
 ## Presentation
