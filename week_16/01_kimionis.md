@@ -55,7 +55,7 @@ All printing was performed with a Dimatix DMP-2831 material deposition inkjet pr
 
 ### Experimentation
 
-https://github.com/gustybear-teaching/course_ee693e_2021_fall/blob/main/week_16/images/Image-1.JPG
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/blob/main/week_16/images/Image-1.JPG" title="Figure 1: mmWave backscatter architecture" width="250" >}}
 
 In principle, any antenna array can be used for mmWave backscattering. A series-fed patch antenna array was designed for demonstration purposes. It has a structure of a bandpass microstripstepped-impedance filter. The antenna array is circularly polarized and circular polarization is achieved by appropriatelytruncating two corners. The integrated backscatter communicator was implemented on a 0.1778-mm-thick flexible liquid-crystal polymer (LCP) substrate.
 
