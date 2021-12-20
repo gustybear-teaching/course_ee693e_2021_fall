@@ -63,3 +63,4 @@ Active mixer allows more flexibility to design the communication systems. There 
 
 4.	Is the LCP substrate the only/best option for them?
 
+The LCP substrates are widely used for medical devices/application because of their excellent thermal properties. An alernative sustrate could be polymide but since polymide needs adhessive and for this particular application higher dielectric contract and higher thermal resistivity is assumed to be the driving factor for choosing LCP substrate. The LCP substrate is capable of supporting upto 60 degrees temeparture which is one of the strongest facor to choose LCP substate.   
