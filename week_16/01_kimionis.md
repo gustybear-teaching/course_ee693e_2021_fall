@@ -41,6 +41,7 @@ The increasing prevalence of IoT requires the use of scalable and robust communi
 
 ### Weaknesses
 - parasitics
+- The paper lacks to mention a detailed cost analysis to support the claim their system to be cost effective. 
 
 
 ### Detailed Comments
