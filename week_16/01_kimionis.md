@@ -35,6 +35,9 @@ The increasing prevalence of IoT requires the use of scalable and robust communi
 - Scalable (no hardware mixer and oscillator)
 - Low cost, low complexity, low power
 - Support multiple modulation schemes
+- Demonstrated a bit rate of 2 Gbps of backscatter transmission at 24–28 GHz
+- Possible Upgradation to 28 GHz using existing the 2.4 GHz electronics
+- Possible reduction of total production cost of mobile devices
 
 ### Weaknesses
 - parasitics
