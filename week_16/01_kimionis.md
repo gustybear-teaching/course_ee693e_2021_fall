@@ -55,6 +55,8 @@ All printing was performed with a Dimatix DMP-2831 material deposition inkjet pr
 
 ### Experimentation
 
+https://github.com/gustybear-teaching/course_ee693e_2021_fall/blob/main/week_16/images/Image-1.JPG
+
 In principle, any antenna array can be used for mmWave backscattering. A series-fed patch antenna array was designed for demonstration purposes. It has a structure of a bandpass microstripstepped-impedance filter. The antenna array is circularly polarized and circular polarization is achieved by appropriatelytruncating two corners. The integrated backscatter communicator was implemented on a 0.1778-mm-thick flexible liquid-crystal polymer (LCP) substrate.
 
 One side of the substrate was used for inkjet-printing the antenna array. Because of the good adhesion of the SNP ink on the thin LCP substrate, the entire structure is flexible. A custom mmWave transceiver with off-the-shelf modules was set up, with a transmitter set up to emit a 24.5 GHz continuous wave. The spectrum of the receiver covered the whole 24–28 GHz band while discarding the 22.5 GHz region. The main-lobe spectrum has been demodulated with a BPSK waveform that was pulse-shaped with square-root raised cosine (SRRC) pulses.
