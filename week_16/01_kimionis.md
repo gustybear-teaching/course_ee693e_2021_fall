@@ -40,7 +40,7 @@ The increasing prevalence of IoT requires the use of scalable and robust communi
 - Possible reduction of total production cost of mobile devices
 
 ### Weaknesses
-- parasitics
+- Parasitics
 - The paper lacks to mention a detailed cost analysis to support the claim their system to be cost effective. 
 
 
