@@ -59,7 +59,7 @@ All printing was performed with a Dimatix DMP-2831 material deposition inkjet pr
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/blob/main/week_16/images/Image-1.JPG" title="Figure 1: mmWave backscatter architecture" width="250" >}}
 
-{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/blob/main/week_16/images/Fig.2_Kiminois.JPG" title="Figure 2: mmWave antenna 5"×"1 array results" width="250" >}}
+{{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/blob/main/week_16/images/Fig.2_Kiminois.JPG" title="Figure 2: mmWave antenna 5x1 array results" width="250" >}}
 
 {{< figure src="https://github.com/gustybear-teaching/course_ee693e_2021_fall/blob/main/week_16/images/Fig-3_Kiminois.JPG" title="Figure 3: mmWave antenna array hardware design" width="250" >}}
 
@@ -80,4 +80,4 @@ Active mixer allows more flexibility to design the communication systems. There 
 
 3.	Is the LCP substrate the only/best option for them?
 
-The LCP substrates are widely used for medical devices/application because of their excellent thermal properties. An alternative substrate could be polymide but since polymide needs adhesive and for this particular application higher dielectric contract and higher thermal resistivity is assumed to be the driving factor for choosing LCP substrate. The LCP substrate is capable of supporting upto 60 degrees temperature which is one of the strongest factor to choose LCP substrate.   
+The LCP substrates are widely used for medical devices/application because of their excellent thermal properties. An alternative substrate could be polymide but since polymide needs adhesive and for this particular application higher dielectric contract and higher thermal resistivity is assumed to be the driving factor for choosing LCP substrate. The LCP substrate is capable of supporting upto 60 degrees temperature which is one of the strongest factor to choose LCP substrate.
